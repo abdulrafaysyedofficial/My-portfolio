@@ -1,0 +1,212 @@
+/* Dark monochrome surfaces with restrained grain and frosted-glass highlights. */
+:root {
+  color-scheme: dark;
+  --ink: #f3f3f5;
+  --muted: #aaaab3;
+  --paper: #09090b;
+  --line: rgba(255, 255, 255, .13);
+  --glass-tint: rgba(28, 28, 33, .78);
+  --glass-edge: rgba(255, 255, 255, .14);
+  --glass-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 16px 42px rgba(0, 0, 0, .24);
+}
+
+body {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 10% 0%, rgba(255, 255, 255, .065), transparent 46%),
+    radial-gradient(ellipse at 95% 65%, rgba(180, 180, 190, .035), transparent 48%);
+  background-attachment: fixed;
+}
+::selection { background: #e4e4e9; color: #151518; }
+.skip-link { background: #f3f3f5; color: #151518; }
+
+.navigation,
+.experience-panel,
+.expertise-card,
+.project-card,
+.academic-card,
+.contact-card,
+.impact {
+  background-color: var(--glass-tint);
+  background-image:
+    linear-gradient(140deg, rgba(255, 255, 255, .055), transparent 48%, rgba(255, 255, 255, .012)),
+    url("assets/glass-grain.svg");
+  background-size: auto, 160px 160px;
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.navigation { --glass-tint: rgba(24, 24, 28, .86); }
+.nav-links a { color: #bcbcc5; }
+.navigation .nav-links a { font-size: 16px; }
+.nav-links a:hover { color: #fff; }
+.nav-contact,
+.button-dark,
+.button-light { background: #eeeef2; color: #161619; }
+.nav-contact:hover,
+.button-dark:hover,
+.button-light:hover { background: #fff; }
+
+.intro-heading > .eyebrow,
+.section-heading .eyebrow {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #d9d9df;
+}
+.intro-heading h1 { font-weight: 650; }
+.intro-heading h1 span,
+.section-heading h2 span,
+.about-intro h2 span { color: #96969f; }
+.section-heading h2 { font-size: clamp(40px, 3.9vw, 52px); font-weight: 650; }
+.intro-section .about-intro h2 { font-weight: 650; }
+.micro-label { color: #a7a7b0; }
+.intro-disciplines { color: #adadb7; }
+.intro-disciplines span { color: #74747f; }
+.portrait-frame {
+  background: #242428;
+  border-color: rgba(255, 255, 255, .35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .09), 0 16px 38px #0000004a;
+}
+.experience-list li:not(:last-child)::before { background: #ffffff24; }
+.experience-dot { background: #777781; }
+.experience-list li:first-child .experience-dot { background: #e7e7ed; }
+.tool-pills span {
+  color: #c3c3cb;
+  background: rgba(255, 255, 255, .035);
+  border-color: #ffffff1c;
+  box-shadow: inset 0 1px 0 #ffffff05;
+}
+
+.impact { border-radius: 28px; padding: 29px 30px; }
+.impact-intro { color: #b2b2bc; }
+.impact-intro strong { color: #ededf2; }
+.impact-value { color: #f5f5f7; }
+.impact-item > span:last-child { color: #d8d8e0; }
+.impact-item small { color: #a8a8b2; }
+
+.expertise-card-dark {
+  --glass-tint: rgba(61, 61, 68, .58);
+  --glass-edge: rgba(255, 255, 255, .23);
+}
+.expertise-card > p,
+.expertise-card-dark > p { color: #b4b4be; }
+.category-icon { background: #ffffff05; border-color: #ffffff24; }
+.card-number { color: #a3a3af; }
+.skill-list,
+.expertise-card-dark .skill-list { border-color: #ffffff1b; }
+.skill-list li { color: #d6d6df; }
+.skill-list li::before { background: #9d9da8; }
+
+.work-filters { background: #ffffff08; border: 1px solid #ffffff16; }
+.work-filters button { color: #c3c3cd; }
+.work-filters button span { color: #9c9ca8; }
+.work-filters button:hover { background: #ffffff10; color: #fff; }
+.work-filters button[aria-pressed="true"] { background: #e8e8ee; color: #161619; box-shadow: 0 2px 8px #0000002a; }
+.work-filters button[aria-pressed="true"] span { color: #61616b; }
+.project-card:hover,
+.academic-card:hover { border-color: #ffffff2e; box-shadow: inset 0 1px 0 #ffffff14, 0 22px 48px #00000042; }
+.project-meta { color: #ababba; }
+.project-copy > p { color: #b2b2bd; }
+.project-open { border-color: #ffffff18; color: #e2e2ea; }
+.round-arrow { background: #ffffff0b; color: #f3f3f7; }
+.project-open:hover .round-arrow { background: #efeff4; color: #161619; }
+.work-note { color: #9c9ca8; }
+.academic-type { color: #b8b8c4; }
+.academic-card > p { color: #b2b2bd; }
+.academic-degree { border-color: #ffffff19; }
+.academic-degree strong { color: #dddde6; }
+
+/* Light miniature interfaces provide contrast inside the darker work tiles. */
+.project-art {
+  background-image: linear-gradient(135deg, #ffffff05, transparent 65%), url("assets/glass-grain.svg");
+  background-size: auto, 160px 160px;
+  border-bottom: 1px solid #ffffff0b;
+}
+.art-immigro { background-color: #25252b; }
+.art-operations { background-color: #141417; }
+.art-team { background-color: #2a2a30; }
+.art-crm { background-color: #202026; }
+.art-caption { color: #a3a3ae; }
+.browser-mock,
+.report-mock,
+.crm-mock,
+.journey-tag {
+  color-scheme: light;
+  --ink: #171719;
+  --muted: #707074;
+  --line: #e1e1e4;
+  color: #171719;
+}
+.team-avatars span { border-color: #2a2a30; }
+.team-avatars span:nth-child(3) { color: #171719; }
+.team-mock > p { color: #b0b0bb; }
+.team-flow > span { background: #dedee5; color: #171719; }
+.team-flow > i { color: #a2a2ad; }
+
+.contact-card { --glass-tint: rgba(35, 35, 41, .78); }
+.contact-card .eyebrow { color: #c6c6d0; }
+.contact-card > p:not(.eyebrow) { color: #b7b7c2; }
+.copy-button { color: #d1d1dc; }
+.copy-button:hover { color: white; }
+.email-address { color: #adadba; }
+.site-footer > p,
+.site-footer > div { color: #a8a8b5; }
+.site-footer a:hover { color: #fff; }
+
+dialog {
+  background-color: rgba(24, 24, 29, .72);
+  background-image: linear-gradient(145deg, #ffffff05, transparent 55%), url("assets/glass-grain.svg");
+  background-size: auto, 160px 160px;
+  border-color: #ffffff29;
+  box-shadow: inset 0 1px 0 #ffffff0f, 0 30px 100px #00000080;
+  backdrop-filter: blur(22px) saturate(90%);
+  -webkit-backdrop-filter: blur(22px) saturate(90%);
+}
+dialog::backdrop { background: rgba(0, 0, 0, .24); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  dialog { background-color: rgba(24, 24, 29, .94); }
+}
+.dialog-close { background: #ffffff0e; color: #f3f3f5; }
+.dialog-close:hover { background: #ffffff1c; }
+.dialog-content > .eyebrow { color: #c5c5d0; font-size: 12px; font-weight: 650; letter-spacing: 1.3px; line-height: 1.6; padding-right: 35px; }
+.dialog-summary { color: #b7b7c2; }
+.dialog-details p,
+.dialog-details li { color: #bfbfc9; }
+.dialog-tools > span { border-color: #ffffff22; background: #ffffff04; color: #c7c7d1; }
+.toast { background: #26262d; border: 1px solid #ffffff24; box-shadow: 0 8px 35px #00000060; }
+
+@media (max-width: 650px) {
+  .navigation .nav-links { gap: 10px; }
+  .navigation .nav-links a { font-size: 14px; }
+  .intro-heading > .eyebrow,
+  .section-heading .eyebrow { font-size: 14px; letter-spacing: 1.8px; }
+  .section-heading h2 { font-size: 39px; }
+  .dialog-content > .eyebrow { font-size: 11px; letter-spacing: 1.1px; }
+  .impact { padding: 25px 18px; gap: 22px 10px; align-items: start; }
+  .impact-intro { font-size: 11px; }
+  .impact-value { font-size: clamp(28px, 8vw, 32px); }
+  .impact-value > span { font-size: 20px; }
+  .impact-item > span:last-child { font-size: 10px; }
+  .impact-item small { font-size: 9px; }
+}
+
+@media print {
+  :root { color-scheme: light; --ink: #171719; --muted: #707074; --paper: #fff; --line: #ddd; }
+  body { color: #171719; background: white; }
+  .experience-panel, .expertise-card, .project-card, .academic-card, .contact-card, .impact {
+    color: #171719;
+    background: white;
+    border-color: #ddd;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .intro-heading > .eyebrow, .section-heading .eyebrow,
+  .skill-list li, .academic-degree strong, .impact-value, .impact-intro strong { color: #171719; }
+  .expertise-card > p, .project-copy > p, .academic-card > p,
+  .impact-item > span:last-child, .impact-item small, .contact-card > p:not(.eyebrow) { color: #555; }
+  .micro-label, .portrait figcaption span, .intro-disciplines,
+  .experience-date, .experience-list p, .tool-pills span,
+  .contact-card .eyebrow, .email-address, .site-footer > p { color: #555; }
+}
