@@ -43,7 +43,7 @@ const projects = {
     sections: [
       { title: "My role", text: "As a Sales & Operations Manager, I combine interviewing, hiring, onboarding, scheduling, and coaching with responsibility for day-to-day store operations and service standards." },
       { title: "How I supported the team", items: [
-        "Conduct candidate interviews on an ongoing basis using the company’s structured interview framework, which I have been trained to follow.",
+        "Source candidates through job listings, conduct interviews, and shortlist applicants to maintain a qualified talent pool and meet staffing requirements efficiently.",
         "Recruited and onboarded employees, helping them understand the role and expectations.",
         "Organized schedules and resources around store requirements.",
         "Coached team members on customer conversations, product positioning, and performance development.",
@@ -72,23 +72,29 @@ const projects = {
     tools: ["LinkedIn", "Prosperix", "HubSpot", "Audience targeting", "Candidate screening"]
   },
   pcResearch: {
-    eyebrow: "OSMANIA UNIVERSITY / BBA · ACADEMIC PROJECT",
+    eyebrow: "OSMANIA UNIVERSITY / BBA · MARKET RESEARCH",
     title: "Understanding the PC buyer.",
-    summary: "A market-research project completed during my Bachelor of Business Administration, comparing assembled and pre-built PCs and the factors behind purchasing decisions.",
+    summary: "A BBA market-research project at Osmania University. I compared “assembled PCs” and “branded PCs” to understand buyer priorities and develop practical purchase recommendations.",
+    branding: {
+      institutionLogo: "assets/osmania-university-logo.jpg",
+      institutionAlt: "Osmania University",
+      institutionSquare: true
+    },
     sections: [
-      { title: "The research question", text: "The project explored how buyers compare assembled and pre-built PCs, considering their needs, product preferences, and cost-to-performance value." },
-      { title: "Research approach", items: [
-        "Used primary and secondary research to compare the two product options.",
-        "Designed questionnaires and gathered input through buyer and seller surveys and interviews at Chenoy Trade Center in Hyderabad.",
-        "Considered academic and professional users as distinct customer groups.",
-        "Compared purchasing preferences and product positioning, and organized the findings into a research report."
+      { title: "My contribution", text: "I designed the research questionnaires, conducted fieldwork at Chenoy Trade Center in Secunderabad and translated buyer and seller feedback into findings and purchase recommendations." },
+      { title: "Research and analysis", items: [
+        { label: "Sample design", text: "Used convenience sampling to reach 120 respondents at the market: 100 buyers and 20 sellers." },
+        { label: "Primary research", text: "Developed a 10-question buyer survey and a five-question seller survey covering purchase needs, pricing, upgrades and warranty." },
+        { label: "Secondary research", text: "Reviewed journals, articles, industry websites and online store reviews to provide market and product context." },
+        { label: "Data analysis", text: "Tabulated response counts and calculated percentages, presenting tables and charts to compare budgets, intended uses, upgrade preferences and warranty expectations." },
+        { label: "Comparative interpretation", text: "Compared buyer preferences with seller input on value, pricing and warranty, identifying distinct needs across academic users, gamers and video-editing customers." }
       ] },
-      { title: "What this developed", text: "The project built my experience in questionnaire design, consumer research, customer segmentation, and comparative analysis. It also gave me practice turning research findings into evidence-based marketing recommendations." }
+      { title: "Findings and recommendations", text: "The study indicated that “assembled PCs” offered stronger value and upgrade flexibility, while “branded PCs” appealed on warranty convenience. I translated these findings into recommendations by customer use case and budget, demonstrating consumer insight, comparative analysis and clear reporting." }
     ],
-    tools: ["Primary research", "Secondary research", "Questionnaire design", "Customer segmentation", "Comparative analysis"]
+    tools: ["Questionnaire design", "Primary & secondary research", "Consumer insights", "Comparative analysis", "Research reporting"]
   },
   timsMints: {
-    eyebrow: "POSTGRADUATE MARKETING · CAPSTONE CONCEPT",
+    eyebrow: "MARKETING CAPSTONE",
     title: "Tim’s Mints",
     summary: "A product development and marketing capstone at Lambton College in Toronto. My team proposed Tim’s Mints, a mint candy concept for Tim Hortons cafés addressing the need for fresh breath after coffee.",
     branding: {
@@ -143,15 +149,18 @@ function openProject(key, trigger) {
   const projectLogo = document.getElementById("dialog-project-logo");
   institution.replaceChildren();
   projectLogo.replaceChildren();
-  institution.hidden = !project.branding;
-  projectLogo.hidden = !project.branding;
-  if (project.branding) {
+  institution.classList.toggle("college-logo-square", Boolean(project.branding?.institutionSquare));
+  institution.hidden = !project.branding?.institutionLogo;
+  projectLogo.hidden = !project.branding?.projectLogo;
+  if (project.branding?.institutionLogo) {
     const schoolImage = document.createElement("img");
     schoolImage.src = project.branding.institutionLogo;
     schoolImage.alt = project.branding.institutionAlt;
     schoolImage.width = 370;
     schoolImage.height = 190;
     institution.append(schoolImage);
+  }
+  if (project.branding?.projectLogo) {
     const logoImage = document.createElement("img");
     logoImage.src = project.branding.projectLogo;
     logoImage.alt = project.branding.projectAlt;

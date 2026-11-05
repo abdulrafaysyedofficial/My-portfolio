@@ -20,9 +20,18 @@ Open `index.html` in a current browser. All assets use relative paths, so the sa
 - `assets/favicon.svg` — compact browser-tab icon.
 - `assets/rafay-syed.jpeg` — the supplied portrait, displayed in a circular frame using CSS.
 - `assets/lambton-college-logo.png` — the supplied Lambton College mark, shown with the academic capstone.
+- `assets/osmania-university-logo.jpg` — the original university mark extracted from the supplied BBA research paper.
 - `assets/tims-mints-concept.jpeg` — original capstone artwork from the supplied creative brief; CSS frames the Tim’s Mints logo beside its title.
+- `assets/fhem-global-logo.png`, `assets/immigro-logo.png` and `assets/glentel-logo.png` — supplied company marks integrated into the headers of the upright project illustrations. The Glentel background was cleaned for display.
+- `assets/osmania-university-logo-transparent.png` — background-free version of the supplied emblem for The Foundation; the original remains in the academic card and popup.
+- `assets/tools/` — nine monochrome tool marks from Simple Icons 11.15.0, including source credits and the CC0 license.
+- `assets/wes-verification-badge.png` — supplied WES badge displayed beside the Osmania University foundation entry.
 
 The Tim’s Mints summary introduces the proposed mint candy for Tim Hortons cafés before describing the contribution. It draws on the supplied situation analysis, creative brief and media plan to highlight market analysis, customer profiling, pricing, positioning, integrated media planning, promotions and Canva creative work. It describes an academic product concept and planned campaign, with no launch or sales results claimed.
+
+The PC buyer summary draws on the supplied BBA paper, highlighting questionnaire design, convenience sampling with 100 buyers and 20 sellers, primary and secondary research, response counts and percentage analysis, and recommendations by use case and budget. It identifies the project with Osmania University and presents findings as those of the academic study. The university mark appears in a rounded square frame on the card and in the project sheet.
+
+The Foundation displays Lambton College and Osmania University logos directly on the page background, with the supplied WES verification alongside Osmania. PostgreSQL, Visual Studio Code and GitHub are included in the tools list, with a monochrome mini logo for every tool. Project sheets use a black base with the existing 72% opacity and frosted-glass blur.
 
 ## Portfolio content
 
