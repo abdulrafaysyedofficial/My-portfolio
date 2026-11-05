@@ -19,6 +19,10 @@ Open `index.html` in a current browser. All assets use relative paths, so the sa
 - `script.js` — work filters, detailed project sheets, and the copy-email action. Project detail copy is grouped at the top.
 - `assets/favicon.svg` — compact browser-tab icon.
 - `assets/rafay-syed.jpeg` — the supplied portrait, displayed in a circular frame using CSS.
+- `assets/lambton-college-logo.png` — the supplied Lambton College mark, shown with the academic capstone.
+- `assets/tims-mints-concept.jpeg` — original capstone artwork from the supplied creative brief; CSS frames the Tim’s Mints logo beside its title.
+
+The Tim’s Mints summary introduces the proposed mint candy for Tim Hortons cafés before describing the contribution. It draws on the supplied situation analysis, creative brief and media plan to highlight market analysis, customer profiling, pricing, positioning, integrated media planning, promotions and Canva creative work. It describes an academic product concept and planned campaign, with no launch or sales results claimed.
 
 ## Portfolio content
 

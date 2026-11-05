@@ -162,6 +162,46 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .academic-degree { display: flex; flex-direction: column; gap: 6px; padding-top: 20px; border-top: 1px solid var(--line); }
 .academic-degree strong { font-size: 12px; font-weight: 500; line-height: 1.7; }
 .academic-degree span { font-size: 11px; color: var(--muted); }
+/* Show the supplied college mark and the original project logo within its artwork. */
+.college-logo { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 146px; height: 68px; padding: 4px 7px; border-radius: 13px; background: #f4f5f6; }
+.college-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.college-logo-card { width: 126px; height: 57px; border-radius: 11px; }
+.academic-card-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 20px; row-gap: 4px; align-items: center; }
+.academic-card-tims .academic-topline { display: contents; }
+.academic-card-header .college-logo-card { grid-column: 2; grid-row: 1; justify-self: end; }
+.academic-card-header .academic-type { grid-column: 2; grid-row: 2; justify-self: end; }
+.academic-card-tims .academic-type { font-size: 12px; font-weight: 600; letter-spacing: 1.3px; }
+.academic-title-row, .dialog-title-row { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.academic-title-row { margin-top: 24px; }
+.academic-card-header .academic-title-row { grid-column: 1; grid-row: 1; margin-top: 0; }
+.academic-title-row h3 { margin-top: 0; min-width: 0; }
+.tims-mints-logo { position: relative; display: block; flex: 0 0 auto; width: 58px; height: 58px; overflow: hidden; border-radius: 13px; background: #d31b2f; }
+.academic-card-tims .tims-mints-logo { width: 48px; height: 48px; }
+.tims-mints-logo img { position: absolute; display: block; width: 506.7568%; max-width: none; height: auto; left: -210.1351%; top: -150%; }
+.dialog-institution { margin-top: 0; }
+.dialog-institution:not([hidden]) + .eyebrow { margin-top: 16px; font-size: 14px; line-height: 1.6; }
+.dialog-title-row { margin-top: 20px; }
+.dialog-title-row h2 { margin-top: 0; min-width: 0; }
+.dialog-project-logo { width: 64px; height: 64px; border-radius: 15px; }
+.dialog-project-logo[hidden], .dialog-institution[hidden] { display: none; }
+.dialog-details li strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 1000px) {
+  .academic-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 540px) {
+  .academic-card-header { grid-template-columns: minmax(0, 1fr); row-gap: 12px; }
+  .academic-card-header .academic-title-row { grid-column: 1; grid-row: 3; }
+  .academic-card-header .college-logo-card { grid-column: 1; grid-row: 1; justify-self: start; }
+  .academic-card-header .academic-type { grid-column: 1; grid-row: 2; justify-self: start; text-align: left; }
+}
+@media (max-width: 650px) {
+  .academic-card-tims .academic-type { font-size: 11px; text-align: right; line-height: 1.7; }
+  .academic-card-tims .academic-title-row h3 { margin-top: 0; }
+  .academic-title-row, .dialog-title-row { gap: 12px; }
+  .tims-mints-logo { width: 48px; height: 48px; border-radius: 11px; }
+  .dialog-institution { width: 136px; height: 62px; }
+  .dialog-institution:not([hidden]) + .eyebrow { font-size: 13px; }
+}
 @media (max-width: 1100px) {
   .intro-section { grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1fr); gap: 38px 25px; }
   .portrait-frame { width: 200px; }

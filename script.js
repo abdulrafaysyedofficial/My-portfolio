@@ -88,21 +88,27 @@ const projects = {
     tools: ["Primary research", "Secondary research", "Questionnaire design", "Customer segmentation", "Comparative analysis"]
   },
   timsMints: {
-    eyebrow: "LAMBTON COLLEGE / POSTGRADUATE MARKETING · ACADEMIC CAPSTONE",
-    title: "Tim’s Mints.",
-    summary: "A capstone project for my postgraduate program in Marketing Management & Professional Sales, connecting a marketing plan with campaign concepts and creative production.",
+    eyebrow: "POSTGRADUATE MARKETING · CAPSTONE CONCEPT",
+    title: "Tim’s Mints",
+    summary: "A product development and marketing capstone at Lambton College in Toronto. My team proposed Tim’s Mints, a mint candy concept for Tim Hortons cafés addressing the need for fresh breath after coffee.",
+    branding: {
+      institutionLogo: "assets/lambton-college-logo.png",
+      institutionAlt: "Lambton College",
+      projectLogo: "assets/tims-mints-concept.jpeg",
+      projectAlt: "Tim’s Mints logo designed by Abdul Rafay Syed"
+    },
     sections: [
-      { title: "My contribution", text: "I architected the marketing plan for Tim’s Mints, working from pricing and positioning through to sales promotions, sponsored social media, and campaign planning." },
-      { title: "Building the marketing plan", items: [
-        "Developed the pricing approach and product positioning.",
-        "Designed sales promotions as part of the broader marketing plan.",
-        "Planned sponsored social media marketing and campaign activities.",
-        "Connected the promotional approach with the advertisements and content needed to communicate it."
-      ] },
-      { title: "Creative execution", text: "I created advertisements and edited video content using Canva, bringing the marketing plan into tangible campaign materials." },
-      { title: "What this demonstrates", text: "The capstone brought together strategic planning and hands-on execution: making decisions about pricing and positioning, planning promotion, and producing the creative content to support the campaign." }
+      { title: "My contribution", text: "I developed the marketing plan, covering pricing, positioning, promotional strategy and media selection. I also designed the Tim’s Mints logo and produced advertisements and video content in Canva." },
+      { title: "Research and positioning", text: "Applied SWOT, Porter’s Five Forces and competitive mapping to assess the market opportunity. Defined a target profile of professionals who drink coffee, with positioning focused on affordability and convenience." },
+      { title: "Campaign planning", text: "Planned an eight-week integrated campaign with channel budgets and scheduling:", items: [
+        { label: "Sales promotions", text: "Complimentary mints with coffee, coupons and product sampling." },
+        { label: "Social media campaigns", text: "Sponsored posts, weekly content and a video contest." },
+        { label: "Video and display ads", text: "YouTube, social video placements and banner advertising." },
+        { label: "Traditional advertising", text: "TV, radio, print and outdoor media." },
+        { label: "Direct marketing and PR", text: "Loyalty emails and event sampling." }
+      ] }
     ],
-    tools: ["Pricing", "Positioning", "Sales promotions", "Sponsored social media", "Campaign planning", "Canva", "Video editing"]
+    tools: ["Market analysis", "Customer profiling", "Pricing & positioning", "Integrated media planning", "Sales promotions", "Canva", "Video editing"]
   }
 };
 
@@ -133,6 +139,26 @@ function openProject(key, trigger) {
   document.getElementById("dialog-eyebrow").textContent = project.eyebrow;
   document.getElementById("dialog-title").textContent = project.title;
   document.getElementById("dialog-summary").textContent = project.summary;
+  const institution = document.getElementById("dialog-institution");
+  const projectLogo = document.getElementById("dialog-project-logo");
+  institution.replaceChildren();
+  projectLogo.replaceChildren();
+  institution.hidden = !project.branding;
+  projectLogo.hidden = !project.branding;
+  if (project.branding) {
+    const schoolImage = document.createElement("img");
+    schoolImage.src = project.branding.institutionLogo;
+    schoolImage.alt = project.branding.institutionAlt;
+    schoolImage.width = 370;
+    schoolImage.height = 190;
+    institution.append(schoolImage);
+    const logoImage = document.createElement("img");
+    logoImage.src = project.branding.projectLogo;
+    logoImage.alt = project.branding.projectAlt;
+    logoImage.width = 750;
+    logoImage.height = 451;
+    projectLogo.append(logoImage);
+  }
   const detailNodes = project.sections.map((section) => {
     const wrapper = document.createElement("section");
     const heading = document.createElement("h3");
@@ -145,7 +171,17 @@ function openProject(key, trigger) {
     }
     if (section.items) {
       const list = document.createElement("ul");
-      section.items.forEach((item) => { const li = document.createElement("li"); li.textContent = item; list.append(li); });
+      section.items.forEach((item) => {
+        const li = document.createElement("li");
+        if (typeof item === "string") {
+          li.textContent = item;
+        } else {
+          const label = document.createElement("strong");
+          label.textContent = `${item.label}: `;
+          li.append(label, document.createTextNode(item.text));
+        }
+        list.append(li);
+      });
       wrapper.append(list);
     }
     return wrapper;
