@@ -1,0 +1,136 @@
+/* Light palette, selected by the device preference or the theme switch. */
+:root {
+  color-scheme: light;
+  --ink: #171719;
+  --description: #000;
+  --muted: var(--description);
+  --paper: #f7f7f9;
+  --line: rgba(23, 23, 25, .13);
+  --glass-tint: rgba(255, 255, 255, .78);
+  --glass-edge: rgba(23, 23, 25, .10);
+  --glass-shadow: inset 0 1px 0 #ffffffd9, 0 14px 36px #17171909;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 10% 0%, #ffffffbd, transparent 46%),
+    radial-gradient(ellipse at 95% 65%, #dedee44d, transparent 48%);
+}
+::selection { background: #242426; color: #fff; }
+.skip-link { background: #171719; color: #fff; }
+
+.navigation,
+.experience-panel,
+.expertise-card,
+.project-card,
+.academic-card,
+.contact-card {
+  color: var(--ink);
+  background-image:
+    linear-gradient(140deg, #ffffffb3, transparent 48%, #17171903),
+    url("assets/glass-grain.svg");
+}
+.navigation { --glass-tint: rgba(255, 255, 255, .86); }
+.nav-links a { color: #55555e; }
+.nav-links a:hover { color: #171719; }
+.nav-contact,
+.button-dark,
+.button-light { background: #202023; color: #fff; }
+.nav-contact:hover,
+.button-dark:hover,
+.button-light:hover { background: #3c3c42; }
+.expertise-card-dark a:focus-visible,
+.contact-card a:focus-visible,
+.contact-card button:focus-visible { outline-color: #171719; }
+
+.intro-heading > .eyebrow,
+.section-heading .eyebrow { color: #3d3d45; }
+.intro-heading h1 span,
+.section-heading h2 span,
+.about-intro h2 span { color: #74747d; }
+.micro-label { color: #5f5f68; }
+.intro-disciplines { color: #606069; }
+.intro-disciplines span { color: #777780; }
+.portrait-frame {
+  background: #e7e7eb;
+  border-color: #ffffffd9;
+  box-shadow: 0 0 0 1px #1717191a, 0 16px 38px #17171914;
+}
+.experience-list li:not(:last-child)::before { background: #17171926; }
+.experience-dot { background: #92929b; }
+.experience-list li:first-child .experience-dot { background: #36363d; }
+.tool-pills span {
+  color: #4b4b54;
+  background: #ffffff8c;
+  border-color: #1717191c;
+  box-shadow: inset 0 1px 0 #ffffffb3;
+}
+.tool-logo { filter: brightness(0); opacity: .72; }
+
+.expertise-card-dark {
+  --glass-tint: rgba(231, 231, 236, .78);
+  --glass-edge: rgba(23, 23, 25, .15);
+}
+.expertise-card > p,
+.expertise-card-dark > p { color: var(--description); }
+.category-icon { background: #17171903; border-color: #17171924; }
+.card-number { color: #686872; }
+.skill-list,
+.expertise-card-dark .skill-list { border-color: #1717191b; }
+.skill-list li { color: var(--description); }
+.skill-list li::before { background: #73737d; }
+
+.work-filters { background: #17171906; border-color: #17171916; }
+.work-filters button { color: #55555f; }
+.work-filters button span { color: #6c6c76; }
+.work-filters button:hover { background: #17171909; color: #171719; }
+.work-filters button[aria-pressed="true"] { background: #fff; color: #171719; box-shadow: 0 2px 8px #17171914; }
+.work-filters button[aria-pressed="true"] span { color: #62626c; }
+.project-card:hover,
+.academic-card:hover { border-color: #17171926; box-shadow: inset 0 1px 0 #fff, 0 22px 48px #17171912; }
+.project-meta { color: #5e5e69; }
+.project-copy > p,
+.academic-card > p { color: var(--description); }
+.project-open { border-color: #17171918; color: #35353e; }
+.round-arrow { background: #17171908; color: #35353e; }
+.project-open:hover .round-arrow { background: #202023; color: #fff; }
+.work-note { color: var(--description); }
+.academic-type { color: #5e5e69; }
+.academic-degree { border-color: #17171919; }
+.academic-degree strong { color: #3d3d46; }
+
+.project-art { border-bottom-color: #1717190c; }
+.art-immigro { background-color: #eaeaee; }
+.art-operations { background-color: #e4e4e9; }
+.art-team { background-color: #ededf0; }
+.art-crm { background-color: #e7e7ec; }
+.project-art .art-caption { color: #606069; }
+
+.contact-card { --glass-tint: rgba(237, 237, 242, .78); }
+.contact-card .eyebrow { color: #4b4b56; }
+.contact-card > p:not(.eyebrow) { color: var(--description); }
+.copy-button { color: #4d4d58; }
+.copy-button:hover { color: #171719; }
+.email-address { color: #60606b; }
+.site-footer > p,
+.site-footer > div { color: #62626c; }
+.site-footer a:hover { color: #171719; }
+
+dialog {
+  background-color: rgba(255, 255, 255, .25);
+  background-image: linear-gradient(145deg, #ffffff1a, transparent 55%), url("assets/glass-grain.svg");
+  border-color: #17171924;
+  box-shadow: inset 0 1px 0 #ffffffcc, 0 30px 100px #17171933;
+}
+dialog::backdrop { background: rgba(255, 255, 255, .08); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  dialog { background-color: rgba(255, 255, 255, .96); }
+}
+.dialog-close { background: #1717190a; color: #35353e; }
+.dialog-close:hover { background: #17171915; }
+.dialog-content > .eyebrow { color: #575762; }
+.dialog-summary { color: var(--description); }
+.dialog-details p,
+.dialog-details li { color: var(--description); }
+.dialog-tools > span { border-color: #17171922; background: #ffffff40; color: #50505b; }
+.toast { background: #26262d; color: #fff; border-color: #ffffff24; box-shadow: 0 8px 35px #17171926; }

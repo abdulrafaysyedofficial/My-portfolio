@@ -150,6 +150,12 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .portrait figcaption strong { font-size: 18px; font-weight: 600; letter-spacing: -.5px; }
 .portrait figcaption span { font-size: 8px; letter-spacing: 1.5px; color: var(--muted); }
 .intro-section .experience-panel { grid-area: experience; padding: 23px; margin-top: 0; align-self: center; }
+.experience-list li { display: grid; grid-template-columns: 7px minmax(0, 1fr); column-gap: 12px; }
+.experience-copy { min-width: 0; }
+.experience-list li:last-child .experience-copy { grid-column: 2 / -1; }
+.experience-title { display: flex; align-items: center; gap: 20px; margin-top: 7px; }
+.experience-title h4 { min-width: 0; margin-top: 0; }
+.experience-company-logo { display: block; flex: 0 0 76px; width: 76px; height: 40px; object-fit: contain; }
 .intro-section .toolkit { grid-area: tools; }
 .intro-section .education { grid-area: education; }
 .intro-section + .impact { margin-top: 48px; }
@@ -174,7 +180,7 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .project-card .project-art { height: 340px; padding: 44px 20px 20px; display: flex; container-type: inline-size; isolation: isolate; }
 .project-art .browser-mock, .project-art .report-mock, .project-art .crm-mock, .project-art .team-mock { position: relative; inset: auto; width: 100%; height: 100%; max-width: 480px; margin-top: 0; transform: none; border: 1px solid #ffffff80; border-radius: 18px; display: flex; flex-direction: column; }
 .project-art .team-mock { padding: 22px; justify-content: space-between; background: #fafafa; color: #171719; }
-.project-art .art-caption { z-index: 2; top: 18px; right: auto; left: 24px; color: #a3a3ae; }
+.project-art .art-caption { z-index: 2; top: 18px; right: auto; left: 24px; color: #a3a3ae; font-size: 8px; letter-spacing: 1.2px; }
 .project-art .report-mock, .project-art .crm-mock { padding: 22px; }
 .project-art .report-body { flex: 1; align-items: center; margin-top: 20px; }
 .project-art .report-bars { height: 80px; }
@@ -187,7 +193,7 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .project-art .crm-row > div span { font-size: 9px; }
 .mock-company-logo { display: block; width: 60px; height: 30px; flex: 0 0 auto; object-fit: contain; }
 .mock-company-logo-glentel { width: 90px; height: 26px; object-fit: cover; }
-.mock-brand { align-items: center; }
+.mock-brand { align-items: center; gap: 10px; }
 .mock-brand > img { display: block; width: 50px; height: 20px; object-fit: contain; }
 .team-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
 .team-panel-heading > span { font-size: 7px; color: #707074; }
@@ -200,7 +206,8 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .team-mock .team-flow > span { padding: 8px 10px; font-size: 9px; }
 .team-mock .team-flow > i { color: #818187; }
 .project-art .team-avatars span { transform: none; }
-.project-art .journey-tag { position: absolute; z-index: 3; right: 12px; bottom: 12px; transform: none; margin-top: 0; box-shadow: 0 8px 24px #00000024; }
+.project-art .journey-tag { position: static; flex: 0 0 auto; transform: none; margin: 0; padding: 8px 9px; gap: 5px; white-space: nowrap; font-size: clamp(6px, 1.8cqw, 8px); font-weight: 500; letter-spacing: 0; box-shadow: 0 4px 12px #0000000a; }
+.project-art .journey-tag .icon { width: 11px; height: 11px; }
 .art-immigro .mock-kicker { margin-top: 12px; }
 .art-immigro .mock-page { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-block: 16px 20px; }
 .art-immigro .mock-page > strong { font-size: clamp(26px, 7cqw, 36px); }
@@ -325,8 +332,8 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .card-link { font-size: 13px; }
 .work-filters button { font-size: 12px; }
 .work-count { font-size: 11px; }
-.project-meta { font-size: 9px; }
-.project-meta span:last-child { font-size: 10px; }
+.project-meta { font-size: 10px; }
+.project-meta span:last-child { font-size: 11px; }
 .project-copy > p { font-size: 14px; }
 .project-open { font-size: 12px; }
 .work-note { font-size: 10px; color: #68686e; }
@@ -337,7 +344,7 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
 .experience-date { font-size: 9px; }
 .experience-list h4 { font-size: 14px; }
 .experience-list p { font-size: 12px; }
-.toolkit > .micro-label, .education > .micro-label { font-size: 9px; }
+.toolkit > .micro-label, .education > .micro-label { font-size: 11px; }
 .tool-pills span { font-size: 12px; }
 .education strong { font-size: 13px; }
 .education > div > span { font-size: 11px; }
@@ -355,8 +362,8 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
   .impact-intro strong { margin-left: 4px; }
   .expertise-card > p { font-size: 13px; min-height: 120px; }
   .skill-list li { font-size: 11px; }
-  .project-meta { font-size: 8px; }
-  .project-meta span:last-child { font-size: 9px; }
+  .project-meta { font-size: 9px; }
+  .project-meta span:last-child { font-size: 10px; }
 }
 @media (max-width: 850px) and (min-width: 651px) {
   .expertise-grid { grid-template-columns: 1fr; }
@@ -376,8 +383,8 @@ dialog { border: 1px solid #e7e7ea; border-radius: 30px; padding: 0; width: min(
   .expertise-card > p { min-height: 0; }
   .skill-list li { font-size: 12px; }
   .work-filters button { font-size: 10px; }
-  .project-meta { font-size: 8px; }
-  .project-meta span:last-child { font-size: 9px; }
+  .project-meta { font-size: 9px; }
+  .project-meta span:last-child { font-size: 10px; }
   .project-copy > p { font-size: 14px; }
   .work-note { font-size: 10px; }
   .contact-card > p:not(.eyebrow) { font-size: 13px; }

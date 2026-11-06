@@ -39,18 +39,18 @@ const projects = {
   team: {
     eyebrow: "GLENTEL / PEOPLE DEVELOPMENT · LEADERSHIP",
     title: "Performance starts with people.",
-    summary: "Day-to-day leadership and development of approximately five sales professionals in a customer-facing retail environment.",
+    summary: "I lead recruitment, onboarding, workforce planning, and performance development for a team of sales professionals, aligning team capabilities and daily execution with business objectives and service standards.",
     sections: [
       { title: "My role", text: "As a Sales & Operations Manager, I combine interviewing, hiring, onboarding, scheduling, and coaching with responsibility for day-to-day store operations and service standards." },
       { title: "How I supported the team", items: [
-        "Source candidates through job listings, conduct interviews, and shortlist applicants to maintain a qualified talent pool and meet staffing requirements efficiently.",
+        "Sourced candidates through job listings, conducted interviews, and shortlisted applicants to maintain a qualified talent pool and meet staffing requirements efficiently.",
         "Recruited and onboarded employees, helping them understand the role and expectations.",
         "Organized schedules and resources around store requirements.",
         "Coached team members on customer conversations, product positioning, and performance development.",
         "Used store performance information to guide priorities and follow-up.",
         "Supported promotional execution and consistent customer service."
       ] },
-      { title: "Store results", text: "The store in the Durham region recorded approximately 40% sales-volume growth in Q4 2025 and exceeded budget targets for eight consecutive months. My contribution included team coaching, focused sales strategies, and promotional execution." }
+      { title: "Store results", text: "The store in the Durham region recorded approximately 40% sales-volume growth in Q4 2025 and exceeded budget targets for eight consecutive months. My contribution included keeping the store adequately staffed during critical periods, coaching the team, and implementing focused sales strategies." }
     ],
     tools: ["Structured interviewing", "Hiring", "Onboarding", "Scheduling", "Coaching", "Performance development"]
   },

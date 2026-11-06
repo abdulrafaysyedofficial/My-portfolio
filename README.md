@@ -2,7 +2,7 @@
 
 Abdul Rafay Syed’s personal portfolio, covering operations, marketing, and team leadership.
 
-A responsive dark monochrome portfolio with textured glass-style tiles built with plain HTML, CSS, and JavaScript. No build tools, external fonts, dependencies, analytics, or account setup are needed.
+A responsive monochrome portfolio with automatic light and dark themes and textured glass-style tiles, built with plain HTML, CSS, and JavaScript. No build tools, external fonts, dependencies, analytics, or account setup are needed.
 
 ## Open the portfolio
 
@@ -15,6 +15,8 @@ Open `index.html` in a current browser. All assets use relative paths, so the sa
 - `index.html` — page content, a photo-led About introduction, skill summaries, work previews, academic projects, experience, and contact links.
 - `styles.css` — responsive layouts, print styles, and reduced-motion support.
 - `theme.css` — the dark monochrome palette, frosted surfaces, contrast, and section-label typography.
+- `light.css` — the matching white-background palette, selected automatically or through the theme switch.
+- `theme.js` — detects the initial appearance, animates theme changes, and remembers the visitor's choice from the theme switch.
 - `assets/glass-grain.svg` — a subtle grayscale texture used by the glass tiles.
 - `script.js` — work filters, detailed project sheets, and the copy-email action. Project detail copy is grouped at the top.
 - `assets/favicon.svg` — compact browser-tab icon.
@@ -23,6 +25,7 @@ Open `index.html` in a current browser. All assets use relative paths, so the sa
 - `assets/osmania-university-logo.jpg` — the original university mark extracted from the supplied BBA research paper.
 - `assets/tims-mints-concept.jpeg` — original capstone artwork from the supplied creative brief; CSS frames the Tim’s Mints logo beside its title.
 - `assets/fhem-global-logo.png`, `assets/immigro-logo.png` and `assets/glentel-logo.png` — supplied company marks integrated into the headers of the upright project illustrations. The Glentel background was cleaned for display.
+- `assets/glentel-logo-transparent.png` — a separate transparent Glentel mark for Experience, at a glance; the FHEM mark is also shown beside its matching role without a background frame.
 - `assets/osmania-university-logo-transparent.png` — background-free version of the supplied emblem for The Foundation; the original remains in the academic card and popup.
 - `assets/tools/` — nine monochrome tool marks from Simple Icons 11.15.0, including source credits and the CC0 license.
 - `assets/wes-verification-badge.png` — supplied WES badge displayed beside the Osmania University foundation entry.
@@ -31,7 +34,13 @@ The Tim’s Mints summary introduces the proposed mint candy for Tim Hortons caf
 
 The PC buyer summary draws on the supplied BBA paper, highlighting questionnaire design, convenience sampling with 100 buyers and 20 sellers, primary and secondary research, response counts and percentage analysis, and recommendations by use case and budget. It identifies the project with Osmania University and presents findings as those of the academic study. The university mark appears in a rounded square frame on the card and in the project sheet.
 
-The Foundation displays Lambton College and Osmania University logos directly on the page background, with the supplied WES verification alongside Osmania. PostgreSQL, Visual Studio Code and GitHub are included in the tools list, with a monochrome mini logo for every tool. Project sheets use a black base with the existing 72% opacity and frosted-glass blur.
+The Foundation displays Lambton College and Osmania University logos directly on the page background, with the supplied WES verification alongside Osmania. PostgreSQL, Visual Studio Code and GitHub are included in the tools list, with a monochrome mini logo for every tool. Project sheets use black glass at 72% background opacity in dark mode and white glass at 25% in light mode, with frosted-glass blur. Description text is fully opaque: pure white in dark mode and black in light mode. The light-mode backdrop uses a faint white wash to preserve the white glass appearance.
+
+## Appearance
+
+The portfolio initially follows the visitor's device or browser theme preference through the native `prefers-color-scheme` media feature. A small button below the navigation offers “View in dark mode” or “View in light mode” according to the current appearance. A visitor's selection takes priority and is remembered in browser storage for later visits; when storage is unavailable, it still works for the current page. Until a visitor selects a mode, device preference changes update the appearance automatically without reloading. Light mode adapts page backgrounds, text, buttons, monochrome tool icons, cards and project sheets while preserving the original branding, layouts and coloured logos. Browser theme-colour metadata follows the active appearance. Without JavaScript, the native system preference still selects the appropriate palette.
+
+Appearance changes use a gentle 420ms cross-fade, including page backgrounds, text and glass surfaces. Browsers without View Transition support use a colour-transition fallback. Reduced-motion preferences switch the theme immediately, and the first page load always opens directly in the selected appearance.
 
 ## Portfolio content
 
@@ -63,5 +72,7 @@ Project filtering accepts space-separated categories on each card. Detail button
 The portfolio is designed for GitHub Pages. Keep these files at the repository root and publish the `main` branch from `/ (root)`. No compilation step is required.
 
 ## Review checks
+
+The theme switch was checked in both directions, with keyboard activation and saved choices after reload, and at 320px and 1280px widths. The cross-fade and rapid keyboard reversals were checked in the preview. Preference handling was also checked with simulated system changes, reduced motion, fallback cleanup, unavailable browser storage, and invalid saved values.
 
 Checked in a browser at 1440px, 390px, and 320px widths. Verified project filtering, work and academic project-sheet opening and closing, Escape and focus return, and copy-email confirmation. The dark theme, larger section labels, regional performance captions, mobile numbers alignment, and dark project sheets were also reviewed. No horizontal overflow or browser errors were observed at the tested mobile sizes. Local asset paths, section anchors, and accessibility references were checked; JavaScript syntax passed the Node.js check.

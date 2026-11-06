@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09090b">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f7f9" media="(prefers-color-scheme: light)">
   <meta name="description" content="Rafay Syed — operations, marketing and team leadership. Explore work in campaign execution, performance reporting, district coordination and team development.">
   <meta property="og:title" content="Rafay's Portfolio">
   <meta property="og:description" content="A marketer’s mindset. An analyst’s eye. A portfolio of operations, marketing and team leadership.">
@@ -12,6 +14,8 @@
   <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="theme.css">
+  <link id="light-theme" rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)">
+  <script src="theme.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body id="top">
@@ -42,6 +46,13 @@
       </div>
       <a class="nav-contact" href="#contact"><span>Let’s talk</span><svg class="icon"><use href="#i-up-right"/></svg></a>
     </nav>
+    <div class="theme-controls">
+      <button class="theme-toggle" id="theme-toggle" type="button" hidden>
+        <svg class="icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg class="icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg>
+        <span>View in light mode</span>
+      </button>
+    </div>
   </header>
 
   <main id="main">
@@ -49,7 +60,7 @@
       <div class="intro-heading"><p class="eyebrow">01 / ABOUT ME</p><h1 id="welcome-title">Welcome to <span>my portfolio.</span></h1><p class="intro-disciplines">Operations <span>·</span> Marketing <span>·</span> Team leadership</p></div>
       <div class="about-intro"><h2 id="about-title">A marketer’s mindset.<br><span>An analyst’s eye.</span></h2><p>I’m Rafay, a Toronto based professional working at the intersection of marketing, operations, and team development.</p><p>My experience spans hands-on digital campaigns at FHEM, retail operations and people leadership at Glentel, and earlier work in business development and customer support. I enjoy work where understanding the customer and organizing the details matter equally.</p><div class="intro-actions"><a class="button button-dark" href="#work">Explore my work <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-link linkedin-link" href="https://www.linkedin.com/in/abdulrafaysyedofficial/" target="_blank" rel="noopener noreferrer"><svg class="linkedin-logo" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg>LinkedIn <svg class="icon"><use href="#i-up-right"/></svg></a></div></div>
       <figure class="portrait"><div class="portrait-frame"><img src="assets/rafay-syed.jpeg" width="842" height="842" alt="Rafay Syed outdoors at night wearing a black coat" fetchpriority="high"></div><figcaption><strong>Abdul Rafay Syed</strong><span>TORONTO, ONTARIO</span></figcaption></figure>
-      <div class="experience-panel"><div class="panel-heading"><h3>Experience, at a glance</h3><span class="small-dot"></span></div><ol class="experience-list"><li><div class="experience-dot"></div><div><span class="experience-date">MAR 2026 — PRESENT</span><h4>Digital Marketing Specialist</h4><p>FHEM Global Solutions LLP</p></div></li><li><div class="experience-dot"></div><div><span class="experience-date">SEP 2025 — PRESENT</span><h4>Sales & Operations Manager</h4><p>Glentel Inc.</p></div></li><li><div class="experience-dot"></div><div><span class="experience-date">EARLIER EXPERIENCE</span><h4>Sales, Business development and technical support</h4></div></li></ol></div>
+      <div class="experience-panel"><div class="panel-heading"><h3>Experience, at a glance</h3><span class="small-dot"></span></div><ol class="experience-list"><li><div class="experience-dot"></div><div class="experience-copy"><span class="experience-date">MAR 2026 — PRESENT</span><div class="experience-title"><h4>Digital Marketing Specialist</h4><img class="experience-company-logo" src="assets/fhem-global-logo.png" width="300" height="148" alt="FHEM Global" loading="lazy"></div><p>FHEM Global Solutions LLP</p></div></li><li><div class="experience-dot"></div><div class="experience-copy"><span class="experience-date">SEP 2025 — PRESENT</span><div class="experience-title"><h4>Sales & Operations Manager</h4><img class="experience-company-logo" src="assets/glentel-logo-transparent.png" alt="Glentel" loading="lazy"></div><p>Glentel Inc.</p></div></li><li><div class="experience-dot"></div><div class="experience-copy"><span class="experience-date">EARLIER EXPERIENCE</span><h4>Sales, Business development and technical support</h4></div></li></ol></div>
       <div class="toolkit"><p class="micro-label">TOOLS I WORK WITH</p><div class="tool-pills"><span><img class="tool-logo" src="assets/tools/microsoftexcel.svg" alt="" width="18" height="18">Excel & PivotTables</span><span><img class="tool-logo" src="assets/tools/hubspot.svg" alt="" width="18" height="18">HubSpot</span><span><img class="tool-logo" src="assets/tools/googleads.svg" alt="" width="18" height="18">Google Ads</span><span><img class="tool-logo" src="assets/tools/wordpress.svg" alt="" width="18" height="18">WordPress</span><span><img class="tool-logo" src="assets/tools/elementor.svg" alt="" width="18" height="18">Elementor</span><span><img class="tool-logo" src="assets/tools/canva.svg" alt="" width="18" height="18">Canva</span><span><img class="tool-logo" src="assets/tools/postgresql.svg" alt="" width="18" height="18">PostgreSQL</span><span><img class="tool-logo" src="assets/tools/visualstudiocode.svg" alt="" width="18" height="18">Visual Studio Code</span><span><img class="tool-logo" src="assets/tools/github.svg" alt="" width="18" height="18">GitHub</span></div></div>
       <div class="education">
         <p class="micro-label">THE FOUNDATION</p>
@@ -89,8 +100,7 @@
         <article class="project-card" data-categories="marketing" id="project-immigro">
           <div class="project-art art-immigro" aria-hidden="true">
             <span class="art-caption">WORKFLOW ILLUSTRATION</span>
-            <div class="browser-mock"><div class="browser-chrome"><span></span><span></span><span></span><i>Immigro / Campaign journey</i></div><div class="mock-page"><span class="mock-brand"><img src="assets/immigro-logo.png" width="317" height="127" alt="Immigro" loading="lazy"><span>↗</span></span><span class="mock-kicker">YOUR NEXT CHAPTER</span><strong>A new path.<br>A clear first step.</strong><div class="mock-page-bottom"><span class="mock-cta">Book a consultation ↗</span><span class="mock-globe">◎</span></div></div></div>
-            <div class="journey-tag"><svg class="icon"><use href="#i-check"/></svg> Ad → Landing page → Enquiry</div>
+            <div class="browser-mock"><div class="browser-chrome"><span></span><span></span><span></span><i>Immigro / Campaign journey</i></div><div class="mock-page"><span class="mock-brand"><img src="assets/immigro-logo.png" width="317" height="127" alt="Immigro" loading="lazy"><span class="journey-tag"><svg class="icon"><use href="#i-check"/></svg> Ad → Landing page → Enquiry</span></span><span class="mock-kicker">YOUR NEXT CHAPTER</span><strong>A new path.<br>A clear first step.</strong><div class="mock-page-bottom"><span class="mock-cta">Book a consultation ↗</span><span class="mock-globe">◎</span></div></div></div>
           </div>
           <div class="project-copy"><div class="project-meta"><span>FHEM / IMMIGRO</span><span>Marketing</span></div><h3>One connected lead journey.</h3><p>Campaign planning, paid search, and a landing page built around a clear next step.</p><button class="project-open" data-project="immigro" aria-label="Read about the Immigro campaign">Explore project <span class="round-arrow"><svg class="icon"><use href="#i-up-right"/></svg></span></button></div>
         </article>

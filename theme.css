@@ -38,6 +38,41 @@ body {
   -webkit-backdrop-filter: blur(24px);
 }
 .navigation { --glass-tint: rgba(24, 24, 28, .86); }
+.site-header { height: auto; }
+.theme-controls { width: min(1000px, calc(100% - 64px)); margin: 12px auto 0; display: flex; justify-content: flex-end; }
+.theme-toggle { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 6px 11px; border: 1px solid var(--line); border-radius: 20px; background: var(--glass-tint); color: var(--ink); font-size: 11px; font-weight: 500; line-height: 1.4; white-space: nowrap; }
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { background: var(--glass-edge); }
+.theme-toggle .icon { width: 14px; height: 14px; }
+.theme-toggle .theme-icon-sun, :root[data-theme="dark"] .theme-icon-moon { display: none; }
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+
+/* Fade appearance changes without moving content or animating first load. */
+::view-transition { pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 420ms;
+    animation-timing-function: ease-in-out;
+  }
+  :root.theme-changing body,
+  :root.theme-changing body *,
+  :root.theme-changing body *::before,
+  :root.theme-changing body *::after,
+  :root.theme-changing dialog::backdrop {
+    transition: color 420ms ease-in-out, background-color 420ms ease-in-out,
+      border-color 420ms ease-in-out, box-shadow 420ms ease-in-out,
+      fill 420ms ease-in-out, stroke 420ms ease-in-out,
+      filter 420ms ease-in-out !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none !important; }
+}
+
 .nav-links a { color: #bcbcc5; }
 .navigation .nav-links a { font-size: 16px; }
 .nav-links a:hover { color: #fff; }
@@ -171,13 +206,15 @@ dialog::backdrop { background: rgba(0, 0, 0, .24); backdrop-filter: blur(4px); -
 .dialog-close { background: #ffffff0e; color: #f3f3f5; }
 .dialog-close:hover { background: #ffffff1c; }
 .dialog-content > .eyebrow { color: #c5c5d0; font-size: 12px; font-weight: 650; letter-spacing: 1.3px; line-height: 1.6; padding-right: 35px; }
-.dialog-summary { color: #b7b7c2; }
+.dialog-summary { color: #fff; }
 .dialog-details p,
-.dialog-details li { color: #bfbfc9; }
+.dialog-details li { color: #fff; }
+.dialog-details li strong { color: inherit; }
 .dialog-tools > span { border-color: #ffffff22; background: #ffffff04; color: #c7c7d1; }
 .toast { background: #26262d; border: 1px solid #ffffff24; box-shadow: 0 8px 35px #00000060; }
 
 @media (max-width: 650px) {
+  .theme-controls { width: calc(100% - 40px); margin-top: 10px; }
   .navigation .nav-links { gap: 10px; }
   .navigation .nav-links a { font-size: 14px; }
   .intro-heading > .eyebrow,
